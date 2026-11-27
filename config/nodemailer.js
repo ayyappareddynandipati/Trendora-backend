@@ -1,10 +1,11 @@
 const nodemailer = require("nodemailer");
 
+// Gmail credentials come from .env (EMAIL_USER, EMAIL_PASS). Never hard-code them.
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: 'vinod783058@gmail.com',
-        pass: 'oxee mfbm nsev oiso'
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
